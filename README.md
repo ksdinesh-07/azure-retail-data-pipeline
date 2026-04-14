@@ -1,7 +1,9 @@
-# 🚀 Azure End-to-End Retail Data Pipeline
+# 🚀 Azure Data Engineering Project – End-to-End Workflow
 
-## Project Overview
-This project implements a complete **Medallion Architecture** (Bronze → Silver → Gold) data pipeline on Microsoft Azure.
+## 📌 Project Overview
+This project demonstrates an end-to-end data engineering pipeline built using Microsoft Azure services. It covers data ingestion, storage, transformation, analytics, and reporting using a modern data architecture.
+
+The goal is to design a scalable, secure, and efficient data pipeline for processing structured data from on-premises systems to actionable insights.
 
 ## Architecture
 MySQL (On-Prem) → ADF → Data Lake (Bronze) → Databricks → Data Lake (Silver/Gold) → Synapse → Power BI
@@ -20,39 +22,114 @@ MySQL (On-Prem) → ADF → Data Lake (Bronze) → Databricks → Data Lake (Sil
 3. Execute Databricks notebooks
 4. Create Synapse views
 5. Open Power BI dashboard
+t_performance.png)
 
-## 📸 Dashboard Screenshots
 
-### Executive Dashboard Overview
-![Dashboard Overview](images/screenshots/dashboard_overview.png)
+## 🏗️ Architecture Workflow
 
-### Sales Trend Analysis
-![Sales Trend](images/screenshots/sales_trend.png)
+The pipeline follows a layered architecture:
 
-### Customer Spending Analysis
-![Customer Analysis](images/screenshots/customer_analysis.png)
+### 1. Data Source
+- On-premises SQL Server Database
 
-### Product Performance
-![Product Performance](images/screenshots/product_performance.png)
+### 2. Ingestion Layer
+- Azure Data Factory (ADF)
+- Extracts data from source systems
 
-### Data Model
-![Data Model](images/screenshots/data_model.png)
+### 3. Storage Layer
+- Azure Data Lake Gen2
+- Data stored in:
+  - Bronze Layer (Raw Data)
+  - Silver Layer (Cleaned Data)
+  - Gold Layer (Curated Data)
 
-## 📊 Power BI Report
+### 4. Transformation Layer
+- Azure Databricks
+- Data cleaning, transformation, and enrichment
 
-The interactive Power BI report is available in the [`powerbi/`](powerbi/) folder.
+### 5. Analytics Layer
+- Azure Synapse Analytics
+- Data warehousing and querying
 
-- **File**: `retail_dashboard.pbix`
-- **Key Metrics**:
-  - Total Revenue
-  - Total Orders
-  - Average Order Value
-  - Customer Segmentation
-  - Product Performance
+### 6. Reporting Layer
+- Power BI
+- Dashboard creation and visualization
 
-### How to View
-1. Download the `.pbix` file
-2. Open with Power BI Desktop (free)
-3. Refresh data (if needed)
-4. Explore interactive visuals
+### 7. Security & Governance
+- Azure Active Directory (AAD)
+- Azure Key Vault
 
+---
+
+## 🔄 Data Flow
+
+
+On-Prem SQL Server
+        ↓
+Azure Data Factory (Ingestion)
+        ↓
+Azure Data Lake Gen2
+ (Bronze → Silver → Gold)
+        ↓
+Azure Databricks (Transformation)
+        ↓
+Azure Synapse Analytics
+        ↓
+Power BI (Reporting)
+
+
+---
+
+## 🛠️ Technologies Used
+
+- Azure Data Factory  
+- Azure Data Lake Storage Gen2  
+- Azure Databricks  
+- Azure Synapse Analytics  
+- Power BI  
+- Azure Active Directory  
+- Azure Key Vault  
+- SQL Server  
+
+---
+
+## 📊 Key Features
+
+- End-to-end ETL pipeline  
+- Layered data architecture (Bronze, Silver, Gold)  
+- Scalable cloud-based solution  
+- Secure data access and governance  
+- Real-time analytics capability (extendable)  
+- Interactive dashboards using Power BI  
+
+---
+
+## 📷 Project Architecture Diagram
+
+![Architecture](./architecture.png)
+
+---
+
+## 🚀 How to Run the Project
+
+1. Set up Azure Data Factory pipeline
+2. Connect to SQL Server data source
+3. Configure Azure Data Lake Storage Gen2
+4. Create Databricks notebooks for transformation
+5. Load processed data into Azure Synapse
+6. Connect Power BI to Synapse for visualization
+
+---
+
+## 📌 Future Enhancements
+
+- Real-time streaming using Azure Event Hub  
+- CI/CD pipeline integration  
+- Advanced data quality checks  
+- Machine learning integration  
+
+---
+
+## 👨‍💻 Author
+
+Dinesh K S  
