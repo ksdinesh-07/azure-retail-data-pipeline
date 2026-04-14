@@ -5,13 +5,3 @@ __pycache__/
 venv/
 *.log
 
-# Databricks
-*.db
-
-# Power BI
-*.pbix
-
-# Sensitive
-*.key
-*.pem
-secrets.json
