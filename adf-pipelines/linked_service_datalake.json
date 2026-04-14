@@ -1,0 +1,17 @@
+{
+    "name": "LS_DataLakeGen2",
+    "properties": {
+        "type": "AzureBlobFS",
+        "typeProperties": {
+            "url": "https://retaildatalake2024.dfs.core.windows.net/",
+            "accountKey": {
+                "type": "AzureKeyVaultSecret",
+                "secretName": "storage-access-key",
+                "store": {
+                    "referenceName": "LS_KeyVault",
+                    "type": "LinkedServiceReference"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "name": "DS_Parquet_Sink",
+    "properties": {
+        "type": "Parquet",
+        "linkedServiceName": {
+            "referenceName": "LS_DataLakeGen2",
+            "type": "LinkedServiceReference"
+        },
+        "parameters": {
+            "schemaName": {
+                "type": "string"
+            },
+            "tableName": {
+                "type": "string"
+            }
+        },
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobFSLocation",
+                "folderPath": {
+                    "value": "@concat('onprem_retail_db/', dataset().tableName)",
+                    "type": "Expression"
+                },
+                "fileSystem": "bronze"
+            }
+        }
+    }
+}

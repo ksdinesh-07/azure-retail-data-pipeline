@@ -1,0 +1,24 @@
+{
+    "name": "LS_OnPrem_MySQL",
+    "properties": {
+        "type": "MySql",
+        "typeProperties": {
+            "server": "127.0.0.1",
+            "port": 3306,
+            "database": "onprem_retail_db",
+            "username": "root",
+            "password": {
+                "type": "AzureKeyVaultSecret",
+                "secretName": "mysql-password",
+                "store": {
+                    "referenceName": "LS_KeyVault",
+                    "type": "LinkedServiceReference"
+                }
+            }
+        },
+        "connectVia": {
+            "referenceName": "IR-OnPrem-MySQL",
+            "type": "IntegrationRuntimeReference"
+        }
+    }
+}

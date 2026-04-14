@@ -1,0 +1,24 @@
+{
+    "name": "DS_MySQL_Source",
+    "properties": {
+        "type": "MySqlTable",
+        "linkedServiceName": {
+            "referenceName": "LS_OnPrem_MySQL",
+            "type": "LinkedServiceReference"
+        },
+        "parameters": {
+            "schemaName": {
+                "type": "string"
+            },
+            "tableName": {
+                "type": "string"
+            }
+        },
+        "typeProperties": {
+            "tableName": {
+                "value": "@concat(dataset().schemaName, '.', dataset().tableName)",
+                "type": "Expression"
+            }
+        }
+    }
+}
